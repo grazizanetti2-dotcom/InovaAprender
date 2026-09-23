@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça os projetos de inovação educacional da ONG InovaAprender.">
+  <title>Projetos | InovaAprender</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <input type="checkbox" id="tema" class="theme-check" aria-label="Alternar tema claro/escuro">
+  <input type="checkbox" id="menu" class="menu-check" aria-label="Abrir ou fechar o menu de navegação">
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo">Inova<span>Aprender</span></a>
+      <label for="menu" class="menu-btn"><span class="bars"></span></label>
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li class="has-sub">
+            <a href="projetos.html" aria-current="page">Projetos <span class="caret" aria-hidden="true">▾</span></a>
+            <ul class="submenu">
+              <li><a href="projetos.html">Nossos projetos</a></li>
+              <li><a href="projetos.html#como-doar">Como doar</a></li>
+              <li><a href="projetos.html#seja-voluntario">Seja voluntário</a></li>
+            </ul>
+          </li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+      <label for="tema" class="theme-toggle">
+        <span class="switch" aria-hidden="true"></span>
+        <span class="txt-light">Tema claro</span>
+        <span class="txt-dark">Tema escuro</span>
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section class="section page-hero">
+      <div class="container">
+        <h1 class="section-title">Nossos projetos</h1>
+        <p class="section-subtitle">Iniciativas que levam inovação e aprendizado para escolas e comunidades.</p>
+
+        <h2 class="visually-hidden">Iniciativas da InovaAprender</h2>
+
+        <div class="grid" id="grade-projetos">
+          <!-- Preenchido em tempo de execução por js/scripts.js (preencherCards),
+               que clona #tpl-card-projeto uma vez para cada item de projetosData.
+               Sem JavaScript, o <noscript> abaixo mostra os mesmos 6 projetos em HTML puro. -->
+        </div>
+        <noscript>
+          <div class="grid">
+            <article class="card">
+              <span class="tag">Digital básico</span>
+              <h3>Primeiros Passos Digitais</h3>
+              <p>Oficinas para aprender a usar computador, internet e e-mail no dia a dia dos estudos.</p>
+            </article>
+            <article class="card">
+              <span class="tag">Reforço</span>
+              <h3>Reforço Digital</h3>
+              <p>Aulas online de reforço em matemática e português, conduzidas por voluntários.</p>
+            </article>
+            <article class="card">
+              <span class="tag">Inclusão</span>
+              <h3>Conecta Escola</h3>
+              <p>Doação e manutenção de computadores e internet para escolas da rede pública.</p>
+            </article>
+            <article class="card">
+              <span class="tag">Formação</span>
+              <h3>Professor Inovador</h3>
+              <p>Capacitação de educadores em metodologias ativas e ferramentas digitais.</p>
+            </article>
+            <article class="card">
+              <span class="tag">Leitura</span>
+              <h3>Biblioteca Viva</h3>
+              <p>Espaços de leitura e contação de histórias em comunidades e bibliotecas populares.</p>
+            </article>
+            <article class="card">
+              <span class="tag">Carreira</span>
+              <h3>Futuro em Ação</h3>
+              <p>Mentoria e orientação profissional para jovens em fase de escolha de carreira.</p>
+            </article>
+          </div>
+        </noscript>
+
+        <template id="tpl-card-projeto">
+          <article class="card">
+            <span class="tag"></span>
+            <h3></h3>
+            <p></p>
+          </article>
+        </template>
+      </div>
+    </section>
+
+    <section class="section" id="como-ajudar" aria-labelledby="titulo-ajuda">
+      <div class="container">
+        <h2 class="section-title" id="titulo-ajuda">Como você pode ajudar</h2>
+        <p class="section-subtitle">Você pode contribuir com uma doação ou com o seu tempo. Veja como funciona cada forma de apoio.</p>
+
+        <div class="grid">
+          <article class="card" id="como-doar">
+            <span class="tag">Doação</span>
+            <h3>Como doar</h3>
+            <p>Sua doação mantém os projetos da InovaAprender e leva mais oportunidades de aprendizado a escolas e comunidades.</p>
+
+            <p class="card-label">Formas de doação</p>
+            <ul>
+              <li>Recursos financeiros para as oficinas e os materiais dos projetos</li>
+              <li>Computadores e equipamentos em bom estado para as escolas</li>
+              <li>Livros e materiais escolares para os espaços de leitura</li>
+            </ul>
+
+            <p class="card-label">Passo a passo</p>
+            <ol>
+              <li>Faça seu cadastro e escolha "Doador" em Tipo de participação.</li>
+              <li>Na mensagem, conte qual projeto você quer apoiar.</li>
+              <li>Aguarde o contato da equipe com as orientações para concluir a doação.</li>
+            </ol>
+
+            <a href="cadastro.html" class="btn btn-primary">Quero doar</a>
+          </article>
+
+          <article class="card" id="seja-voluntario">
+            <span class="tag">Voluntariado</span>
+            <h3>Seja voluntário</h3>
+            <p>Você pode dedicar parte do seu tempo aos projetos da InovaAprender e contribuir com o aprendizado de estudantes.</p>
+
+            <p class="card-label">Áreas de atuação</p>
+            <ul>
+              <li>Reforço escolar online em matemática e português</li>
+              <li>Oficinas de uso básico de computador e internet</li>
+              <li>Contação de histórias e incentivo à leitura</li>
+              <li>Mentoria para jovens em fase de escolha de carreira</li>
+            </ul>
+
+            <p class="card-label">Passo a passo</p>
+            <ol>
+              <li>Faça seu cadastro e escolha "Voluntário" em Tipo de participação.</li>
+              <li>Na mensagem, conte em qual área você gostaria de atuar.</li>
+              <li>Aguarde o contato da equipe para combinar dias e horários.</li>
+            </ol>
+
+            <a href="cadastro.html" class="btn btn-primary">Quero ser voluntário</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta">
+      <div class="container">
+        <h2 class="section-title">Quer apoiar algum projeto?</h2>
+        <p>Cadastre-se e ajude a levar educação de qualidade a mais pessoas.</p>
+        <a href="cadastro.html" class="btn btn-primary">Quero ajudar</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>InovaAprender</h3>
+          <p>Inovação educacional para um futuro mais justo.</p>
+        </div>
+        <nav aria-label="Rodapé">
+          <h3>Páginas</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h3>Contato</h3>
+          <address>
+            <p>contato@inovaaprender.org</p>
+          </address>
+        </div>
+      </div>
+      <p class="copy">&copy; 2026 InovaAprender. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="../js/armazenamento.js" defer></script>
+  <script src="../js/integracoes.js" defer></script>
+  <script src="../js/templates.js" defer></script>
+  <script src="../js/formulario.js" defer></script>
+  <script src="../js/spa.js" defer></script>
+</body>
+</html>

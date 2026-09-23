@@ -1,0 +1,25 @@
+{
+  "name": "inovaaprender",
+  "version": "1.0.0",
+  "description": "Site institucional da ONG InovaAprender, com foco em inovação educacional.",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grazizanetti2-dotcom/InovaAprender.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grazizanetti2-dotcom/InovaAprender/issues"
+  },
+  "homepage": "https://github.com/grazizanetti2-dotcom/InovaAprender#readme",
+  "devDependencies": {
+    "clean-css": "^5.3.3",
+    "html-minifier-terser": "^7.2.0",
+    "terser": "^5.51.2"
+  }
+}

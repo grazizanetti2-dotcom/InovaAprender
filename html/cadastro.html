@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cadastre-se como voluntário, doador ou parceiro da InovaAprender.">
+  <title>Cadastro | InovaAprender</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <input type="checkbox" id="tema" class="theme-check" aria-label="Alternar tema claro/escuro">
+  <input type="checkbox" id="menu" class="menu-check" aria-label="Abrir ou fechar o menu de navegação">
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo">Inova<span>Aprender</span></a>
+      <label for="menu" class="menu-btn"><span class="bars"></span></label>
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li class="has-sub">
+            <a href="projetos.html">Projetos <span class="caret" aria-hidden="true">▾</span></a>
+            <ul class="submenu">
+              <li><a href="projetos.html">Nossos projetos</a></li>
+              <li><a href="projetos.html#como-doar">Como doar</a></li>
+              <li><a href="projetos.html#seja-voluntario">Seja voluntário</a></li>
+            </ul>
+          </li>
+          <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
+        </ul>
+      </nav>
+      <label for="tema" class="theme-toggle">
+        <span class="switch" aria-hidden="true"></span>
+        <span class="txt-light">Tema claro</span>
+        <span class="txt-dark">Tema escuro</span>
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section class="section page-hero">
+      <div class="container">
+        <h1 class="section-title">Faça seu cadastro</h1>
+        <p class="section-subtitle">Preencha os dados abaixo para se tornar voluntário, doador ou parceiro.</p>
+
+        <h2 class="visually-hidden">Formulário de cadastro</h2>
+
+        <div id="feedback-cadastro" class="alert alert--success" role="status" hidden>
+          <span class="fb-icon" aria-hidden="true">✓</span>
+          <div>
+            <p class="alert__title">Cadastro enviado</p>
+            <p>Recebemos seus dados. Nossa equipe entrará em contato em breve.</p>
+          </div>
+        </div>
+
+        <form class="form-card" id="form-cadastro" action="#" method="post" novalidate>
+
+          <fieldset>
+            <legend>Dados pessoais</legend>
+            <div class="form-grid">
+              <div class="field full">
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" name="nome" minlength="3" maxlength="100"
+                       placeholder="Seu nome completo" autocomplete="name" required
+                       aria-describedby="erro-nome">
+                <span class="erro" id="erro-nome" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email"
+                       placeholder="voce@email.com" autocomplete="email" required
+                       aria-describedby="erro-email">
+                <span class="erro" id="erro-email" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="nascimento">Data de nascimento</label>
+                <input type="date" id="nascimento" name="nascimento" required
+                       aria-describedby="erro-nascimento">
+                <span class="erro" id="erro-nascimento" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" name="cpf" inputmode="numeric"
+                       pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14"
+                       placeholder="000.000.000-00" required
+                       aria-describedby="hint-cpf erro-cpf">
+                <span class="hint" id="hint-cpf">Formato: 000.000.000-00</span>
+                <span class="erro" id="erro-cpf" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" inputmode="tel"
+                       pattern="\(\d{2}\) \d{4,5}-\d{4}" maxlength="15"
+                       placeholder="(00) 00000-0000" autocomplete="tel" required
+                       aria-describedby="hint-telefone erro-telefone">
+                <span class="hint" id="hint-telefone">Formato: (00) 00000-0000</span>
+                <span class="erro" id="erro-telefone" aria-live="polite"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Endereço</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" name="cep" inputmode="numeric"
+                       pattern="\d{5}-\d{3}" maxlength="9"
+                       placeholder="00000-000" autocomplete="postal-code" required
+                       aria-describedby="hint-cep erro-cep">
+                <span class="hint" id="hint-cep">Formato: 00000-000</span>
+                <span class="erro" id="erro-cep" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" name="cidade" autocomplete="address-level2" required
+                       aria-describedby="erro-cidade">
+                <span class="erro" id="erro-cidade" aria-live="polite"></span>
+              </div>
+              <div class="field full">
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco" name="endereco"
+                       placeholder="Rua, número e bairro" autocomplete="address-line1" required
+                       aria-describedby="erro-endereco">
+                <span class="erro" id="erro-endereco" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="estado">Estado</label>
+                <select id="estado" name="estado" required aria-describedby="erro-estado">
+                  <option value="">Selecione</option>
+                  <option value="SP">São Paulo</option>
+                  <option value="RJ">Rio de Janeiro</option>
+                  <option value="MG">Minas Gerais</option>
+                  <option value="PR">Paraná</option>
+                  <option value="RS">Rio Grande do Sul</option>
+                  <option value="SC">Santa Catarina</option>
+                  <option value="BA">Bahia</option>
+                  <option value="OUTRO">Outro</option>
+                </select>
+                <span class="erro" id="erro-estado" aria-live="polite"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Como quer participar?</legend>
+            <div class="form-grid">
+              <div class="field full">
+                <label for="tipo">Tipo de participação</label>
+                <select id="tipo" name="tipo" required aria-describedby="erro-tipo">
+                  <option value="">Selecione</option>
+                  <option value="voluntario">Voluntário</option>
+                  <option value="doador">Doador</option>
+                  <option value="parceiro">Parceiro</option>
+                </select>
+                <span class="erro" id="erro-tipo" aria-live="polite"></span>
+              </div>
+              <div class="field full">
+                <label for="mensagem">Mensagem (opcional)</label>
+                <textarea id="mensagem" name="mensagem" maxlength="500"
+                          placeholder="Conte um pouco sobre você e como gostaria de ajudar"></textarea>
+              </div>
+              <div class="field full check">
+                <input type="checkbox" id="termos" name="termos" required
+                       aria-describedby="erro-termos">
+                <label for="termos">Li e aceito os termos de uso e a política de privacidade.</label>
+                <span class="erro" id="erro-termos" aria-live="polite"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn btn-primary">Enviar cadastro</button>
+        </form>
+
+        <div class="panel" id="historico-cadastros">
+          <h2>Cadastros enviados neste navegador</h2>
+          <p>Guardado só neste navegador, com <code>localStorage,</code> ninguém mais vê essa lista, e ela continua aqui mesmo se você fechar a aba e voltar depois.</p>
+
+          <p id="historico-vazio">Nenhum cadastro enviado ainda neste navegador.</p>
+          <ul class="demo-list" id="lista-historico" aria-live="polite"></ul>
+
+          <button type="button" class="btn btn-outline" id="limpar-historico">Limpar histórico</button>
+        </div>
+
+        <template id="tpl-item-historico">
+          <li class="item-historico">
+            <span class="badge"></span>
+            <strong></strong>
+            <time datetime="2026-01-01T00:00"></time>
+          </li>
+        </template>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>InovaAprender</h3>
+          <p>Inovação educacional para um futuro mais justo.</p>
+        </div>
+        <nav aria-label="Rodapé">
+          <h3>Páginas</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li class="has-sub">
+            <a href="projetos.html">Projetos <span class="caret" aria-hidden="true">▾</span></a>
+            <ul class="submenu">
+              <li><a href="projetos.html">Nossos projetos</a></li>
+              <li><a href="projetos.html#como-doar">Como doar</a></li>
+              <li><a href="projetos.html#seja-voluntario">Seja voluntário</a></li>
+            </ul>
+          </li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h3>Contato</h3>
+          <address>
+            <p>contato@inovaaprender.org</p>
+          </address>
+        </div>
+      </div>
+      <p class="copy">&copy; 2026 InovaAprender. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="../js/armazenamento.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.10/dayjs.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.10/locale/pt-br.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.10/plugin/relativeTime.min.js" defer></script>
+  <script src="../js/integracoes.js" defer></script>
+  <script src="../js/templates.js" defer></script>
+  <script src="../js/formulario.js" defer></script>
+  <script src="../js/spa.js" defer></script>
+</body>
+</html>
